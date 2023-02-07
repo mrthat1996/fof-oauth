@@ -77,7 +77,7 @@ abstract class Provider
 
     protected function verifyEmail($email)
     {
-        if (!$email || empty($email)) {
+        if (!$email || empty($email) || !strpos($email, '@gumiviet.com')) {
             throw new AuthenticationException('invalid_email');
         }
     }
